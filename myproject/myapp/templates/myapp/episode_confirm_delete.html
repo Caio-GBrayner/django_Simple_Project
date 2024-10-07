@@ -1,0 +1,7 @@
+<h1>Deletar Episódio</h1>
+<p>Tem certeza que deseja deletar "{{ episode.title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmar</button>
+</form>
+<a href="{% url 'episode_list' %}">Cancelar</a>
