@@ -1,4 +1,4 @@
-# serializers.py
+
 from rest_framework import serializers
 from .models import Episode, Playlist, JobPosting, EcosystemMap, Transcription, GlossaryTerm, Quiz
 

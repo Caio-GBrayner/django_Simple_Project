@@ -2,14 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:
+                <input type="text" name="username" id="username" placeholder="Enter your username" required>
+            </label>
+            <label for="password">Password:
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            </label>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginResult"></p>
+        <hr>
+
+        <!-- Link para autenticação Google -->
+       <div class="google-login">
+            <a href="/rest-auth/google/"> 
+                <button type="button">Login with Google</button>
+            </a>
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

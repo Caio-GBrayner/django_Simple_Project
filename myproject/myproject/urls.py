@@ -16,9 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from django.contrib.auth import views as auth_views
+from myapp import views 
+
+router = routers.DefaultRouter()
+router.register(r'episodes', views.EpisodeViewSet)
+router.register(r'playlists', views.PlaylistViewSet)
+router.register(r'jobpostings', views.JobPostingViewSet)
+router.register(r'ecosystemmaps', views.EcosystemMapViewSet)
+router.register(r'transcriptions', views.TranscriptionViewSet)
+router.register(r'glossaryterms', views.GlossaryTermViewSet)
+router.register(r'quizzes', views.QuizViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('', include('myapp.urls')),  
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include('myapp.urls')),  # Inclua as URLs do seu aplicativo
+    path('api/login/', views.LoginView.as_view(), name='login-api'),
 ]
+
