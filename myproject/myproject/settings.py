@@ -38,17 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',  # Seu aplicativo customizado
-    'crispy_forms',  # Para formulários elegantes
-    'rest_framework',  # Django REST framework
-    'rest_framework.authtoken',  # Token Authentication
-    'dj_rest_auth',  # Autenticação e registro com Django REST Auth
-    'allauth',  # Django Allauth para registro e login
-    'allauth.account',  # Registro e autenticação de contas
-    'allauth.socialaccount',  # Autenticação social (ex.: Google)
-    'rest_framework_simplejwt.token_blacklist',  # Suporte ao JWT
+    'crispy_forms',
+    'rest_framework',
+    'django_otp',
+    'django_otp.plugins.otp_totp',
+    'two_factor',
+    'phonenumber_field',
+    'django.contrib.sites', 
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
+    'allauth.socialaccount.providers.google',
+    'myapp',
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,8 +60,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+    'django_otp.middleware.OTPMiddleware',
+    'allauth.account.middleware.AccountMiddleware', # Adicionar o middleware necessário
 ]
+
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -135,10 +139,14 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
+SITE_ID = 1 
 
-LOGIN_REDIRECT_URL = '/episodes/'
-LOGOUT_REDIRECT_URL = '/login/'
-
+AUTHENTICATION_BACKENDS = ( 
+    'django.contrib.auth.backends.ModelBackend', 
+    'allauth.account.auth_backends.AuthenticationBackend', )
+ 
+LOGIN_REDIRECT_URL = '/' 
+LOGOUT_REDIRECT_URL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -155,10 +163,12 @@ REST_FRAMEWORK = {
     ),
 }
 
-# Configurações do Simple JWT
+from datetime import timedelta
+
+# Configurações do Simple JWT para 2FA
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes = 5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days = 1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'ALGORITHM': 'HS256',
@@ -166,5 +176,7 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-# Configurações de Email
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Configurações do django-otp
+OTP_TOTP_ISSUER = 'MyProject'
+OTP_TOTP_DIGITS = 6
+

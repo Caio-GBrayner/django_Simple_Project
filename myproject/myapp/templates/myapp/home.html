@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="{% url 'home' %}">Home</a>
+        </div>
+        <div class="navbar-right">
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Welcome to Our Podcast!</h1>
+        <p>Enjoy the latest episodes of our podcast. Click on the play button to listen.</p>
+
+        {% for episode in episodes %}
+        <div class="podcast-episode">
+            <h2>{{ episode.title }}</h2>
+            <audio controls>
+                <source src="{% static episode.audio_file %}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
