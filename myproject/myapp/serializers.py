@@ -1,16 +1,5 @@
-# serializers.py
 from rest_framework import serializers
 from .models import Episode, Playlist, JobPosting, EcosystemMap, Transcription, GlossaryTerm, Quiz
-
-class EpisodeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Episode
-        fields = '__all__'
-
-class PlaylistSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Playlist
-        fields = '__all__'
 
 class EpisodeSerializer(serializers.ModelSerializer):
     class Meta:

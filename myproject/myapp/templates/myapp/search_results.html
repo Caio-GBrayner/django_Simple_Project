@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <form method="GET" action="{% url 'search' %}">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <h2>Results:</h2>
+    <ul>
+        {% for episode in results %}
+            <li>{{ episode.title }}: {{ episode.description }}</li>
+        {% empty %}
+            <li>No results found</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

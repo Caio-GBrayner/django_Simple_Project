@@ -1,20 +1,8 @@
-from django.urls import path
-from django.contrib.auth import views as auth_views
-from . import views
-
-urlpatterns = [
-    path('login/', auth_views.LoginView.as_view(template_name='myapp/login.html'), name='login'),
-    path('', views.episode_list, name='episode_list'),  
-    path('episodes/', views.episode_list, name='episode_list'),
-    path('episodes/new/', views.episode_create, name='episode_create'),
-    path('episodes/<int:pk>/edit/', views.episode_update, name='episode_update'),
-    path('episodes/<int:pk>/delete/', views.episode_delete, name='episode_delete'),
-]
-
-from django.urls import include, path
+from django.urls import path, include
 from rest_framework import routers
 from . import views
 
+# Configurando o router para as rotas da API
 router = routers.DefaultRouter()
 router.register(r'episodes', views.EpisodeViewSet)
 router.register(r'playlists', views.PlaylistViewSet)
@@ -24,8 +12,18 @@ router.register(r'transcriptions', views.TranscriptionViewSet)
 router.register(r'glossaryterms', views.GlossaryTermViewSet)
 router.register(r'quizzes', views.QuizViewSet)
 
-urlpatterns = [
+web_urlpatterns = [
+    path('search/', views.search, name='search'),
+    path('', views.index, name='index'),  # Página inicial do aplicativo
+    path('sobre/', views.sobre, name='sobre'),  # Página sobre
+    path('explore/', views.explore, name='explore'),  # Página explorar
+    path('cadastro/', views.CustomSignupView.as_view(), name='account_signup'), # Página de cadastro personalizada
+    path('login/', views.CustomLoginView.as_view(), name='account_login'),  # Página de login personalizada
+]
+
+api_urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
+urlpatterns = web_urlpatterns + api_urlpatterns

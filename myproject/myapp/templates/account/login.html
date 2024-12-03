@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <main>
+        <div class="login-body">
+            <section class="visual-carousel">
+                <div class="text-carousel">
+                    <div class="logo">
+                        <img src="{% static 'img/LOGO.svg' %}" alt="Microfone roxo">
+                        <h2>QueridasTech</h2>
+                    </div>
+                    <h2>Um podcast sobre <span>Tecnologia da Informação</span></h2> 
+                </div>
+                <div class="carousel-body">
+                    <div class="card-container">
+                        <button class="arrow left-arrow">←</button>
+                        <div class="card">
+                            <img src="{% static 'img/carousel-login.svg' %}" alt="Microfone" />
+                        </div>
+                        <button class="arrow right-arrow">→</button>
+                    </div>               
+                </div>
+            </section>
+            <section class="login-component" style="background-color: #4D1363;">
+                <div class="body-login">
+                    <div class="title-login">
+                        <div class="arrow-login">
+                            <a href="{% url 'index' %}">
+                                <svg width="25" height="24" viewBox="0 0 37 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.939339 10.9393C0.353554 11.5251 0.353554 12.4749 0.939339 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97919 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.939339 10.9393ZM37 10.5L2 10.5V13.5L37 13.5V10.5Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <h2>Entre na sua conta</h2>
+                    </div>
+                    <div class="form-login">
+                        <form method="POST" action="{% url 'account_login' %}">
+                            {% csrf_token %}
+                            <div class="input-forms">
+                                <div class="input-login">
+                                    <label for="login">E-MAIL</label>
+                                    <input id="login" type="email" name="login" placeholder="Digite seu e-mail" required>
+                                </div>
+                            
+                                <div class="input-login position-relative">
+                                    <label for="password">SENHA</label>
+                                    <input id="password" type="password" name="password" placeholder="Digite sua senha" class="form-control" required>
+                                    <span id="toggle-password" class="position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                                        <!-- Olho com barra -->
+                                        <svg id="eye-slash" xmlns="http://www.w3.org/2000/svg" class="bi bi-eye-slash" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+                                            <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                                            <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                                        </svg>
+                                    
+                                        <!-- Olho -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="eye" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16" style="display:none;">
+                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            
+                                <div class="input-checkbox">
+                                    <input id="remember" type="checkbox">
+                                    <label for="remember">Lembrar senha</label>
+                                </div>
+                            </div>
+                
+                            <div class="input-button">
+                                <button type="submit">Entrar</button>
+                            </div>
+                        </form>
+                        <a href="{% url 'account_signup' %}" id="start-address"> CADASTRE-SE</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const passwordInput = document.getElementById('password');
+                const togglePassword = document.getElementById('toggle-password');
+                const eye = document.getElementById('eye');
+                const eyeSlash = document.getElementById('eye-slash');
+        
+                togglePassword.addEventListener('click', () => {
+                    // Alternar visibilidade do campo de senha
+                    const isPasswordVisible = passwordInput.type === 'text';
+                    passwordInput.type = isPasswordVisible ? 'password' : 'text';
+        
+                    // Alternar ícones
+                    eye.style.display = isPasswordVisible ? 'none' : 'inline';
+                    eyeSlash.style.display = isPasswordVisible ? 'inline' : 'none';
+                });
+            });
+        </script>
+        
+        </body>
+        </html>
+        
