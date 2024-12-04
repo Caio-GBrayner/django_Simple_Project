@@ -7,11 +7,6 @@ const episodes = [
     { title: 'EP 05 - ESTUDANTE EMBARQUE', link: '#', description: 'Falamos sobre o processo e estudo no programa Embarque Digital, com', speaker: 'Felipe', image: './Assets/img/ep5.svg', audio: './Assets/audio/audio5.mp3' },
 ];
 
-// Seleção das colunas
-const upColumn = document.querySelector('.up-column');
-const midColumn = document.querySelector('.mid-column');
-const dowColumn = document.querySelector('.dow-column');
-
 // Função para criar o HTML de cada episódio
 function createBox(episode) {
     const box = document.createElement('div');
@@ -28,37 +23,35 @@ function createBox(episode) {
                     </div>
                 </div>
             </div>
-            <div class="complement-box">
-                <!-- Player de áudio usando MediaElement.js -->
-                <div class="audio-player">
-                    <audio class="mejs-player" controls>
-                        <source src="${episode.audio}" type="audio/mpeg">
-                    </audio>
-                </div>
-            </div>
         </div>
     `;
     return box;
 }
 
+// Inicialização dinâmica
 document.addEventListener('DOMContentLoaded', function () {
+    // Seleção das colunas
+    const upColumn = document.querySelector('.up-column');
+    const midColumn = document.querySelector('.mid-column');
+    const dowColumn = document.querySelector('.dow-column');
+
     // Contadores para as colunas
     let upCount = 0;
     let midCount = 0;
     let dowCount = 0;
 
-    episodes.forEach((episode, index) => {
+    episodes.forEach((episode) => {
         const box = createBox(episode);
 
         if (upCount < 2) {
             upColumn.appendChild(box); // Coloca as 2 primeiras boxes na upColumn
-            upCount++; // Incrementa o contador de upColumn
-        } else if (midCount < 3) {
+            upCount++;
+        } else if (midCount < 2) {
             midColumn.appendChild(box); // Coloca até 3 boxes na midColumn
-            midCount++; // Incrementa o contador de midColumn
+            midCount++;
         } else if (dowCount < 2) {
             dowColumn.appendChild(box); // Coloca até 2 boxes na dowColumn
-            dowCount++; // Incrementa o contador de dowColumn
+            dowCount++;
         }
     });
 
@@ -66,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const players = document.querySelectorAll('.mejs-player');
     players.forEach(player => {
         new MediaElementPlayer(player, {
-            // Configurações adicionais podem ser feitas aqui se necessário
             features: ['playpause', 'progress', 'current', 'duration', 'volume', 'fullscreen']
         });
     });

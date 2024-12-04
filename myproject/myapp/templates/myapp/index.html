@@ -18,100 +18,103 @@
     <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <!-- MediaElement.js -->
-    <script src="{% static 'mediaelement-master/build/mediaelement-and-player.js' %}"></script>
+    <script src="{% static 'build/mediaelement-and-player.js' %}"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelement-and-player.min.js"></script>
     <link rel="stylesheet" href="{% static 'mediaelement-master/build/mediaelementplayer-legacy.min.css' %}" />
     
     <!-- Seu CSS -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <title>Document</title>
 </head>
 
+
 <body>
-    {% load static %}
-<header class="p-3">
-    <div class="primary-navbar container d-flex align-items-center justify-content-between">
-        <!-- Logo -->
-        <div class="logo-nav d-flex">
-            <a href="{% url 'index' %}"><h3>QueridasTech</h3></a>
-        </div>
-
-        <!-- Campo de busca -->
-        <form class="d-flex mx-auto md-3 form" style="flex-grow: 1; max-width: 300px; margin-right: 20px;">
-            <input class="form-control input-form bg-transparent" type="search" placeholder="Pesquisar" aria-label="Search">
-            <a class="btn-form btn-outline-success bg-transparent text-white" type="submit">
-                <img class="img-nav" src="{% static 'Assets/icons/search-icon.svg' %}" alt="Lupa">
-            </a>
-        </form>
-
-        <!-- Menu -->
-        <ul class="nav col-lg-auto me-auto mb-md-0">
-            <li><a href="#sobre" class="nav-link nav-txt">Sobre</a></li>
-            <li><a href="#episodes" class="nav-link nav-txt">Episódios</a></li>
-        </ul>
-
-        <!-- Botões -->
-        <div class="text-end">
-            <a href="{% url 'account_login' %}"><button type="button" class="btn me-2 button-nav entrar">Entrar</button></a>
-            <a href="{% url 'account_signup' %}"><button type="button" class="btn button-nav cadastrar">Cadastre-se</button></a>
-        </div>
-    </div>
-
-    <!-- Navbar (hamburguer) -->
-    <nav class="navbar navbar-expand-lg navbar-responsive p-3">
-        <a class="navbar-brand" href="{% url 'index' %}">QueridasTech</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'index' %}">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#sobre">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#episodes">Episódios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Entrar</a>
-                </li>
+    <header class="p-3">
+        <div class="primary-navbar container d-flex align-items-center justify-content-between">
+            <!-- Logo -->
+            <div class="logo-nav d-flex">
+                <a href="{% url 'index' %}"><h3>QueridasTech</h3></a>
+            </div>
+    
+            <!-- Campo de busca -->
+            <form class="d-flex mx-auto md-3 form" style="flex-grow: 1; max-width: 300px; margin-right: 20px;">
+                <input class="form-control input-form bg-transparent" type="search" placeholder="Pesquisar" aria-label="Search">
+                <a class="btn-form btn-outline-success bg-transparent text-white" type="submit">
+                    <img class="img-nav" src="{% static 'Assets/icons/search-icon.svg' %}" alt="Lupa">
+                </a>
+            </form>
+    
+            <!-- Menu -->
+            <ul class="nav col-lg-auto me-auto mb-md-0">
+                <li><a href="{% url 'about_us' %}" class="nav-link nav-txt">Sobre</a></li>
+                <li><a href="#episodes" class="nav-link nav-txt">Episódios</a></li>
             </ul>
-            <span class="navbar-text"></span>
+    
+            <!-- Botões -->
+            <div class="text-end">
+                <a href="{% url 'account_login' %}"><button type="button" class="btn me-2 button-nav entrar">Entrar</button></a>
+                <a href="{% url 'account_signup' %}"><button type="button" class="btn button-nav cadastrar">Cadastre-se</button></a>
+            </div>
         </div>
-    </nav>
-</header>
-
-<main>
-    <div id="banner">
-        <section class="banner" id="sobre">
-            <div class="banner-content">
-                <h1>Um Podcast sobre <span><br>Tecnologia da Informação</span></h1>
-                <p>Texto contando como o QueridasTech surgiu e qual seu propósito, de uma maneira objetiva e curta.</p>
+    
+        <!-- Navbar (hamburguer) -->
+        <nav class="navbar navbar-expand-lg navbar-responsive p-3">
+            <a class="navbar-brand" href="{% url 'index' %}">QueridasTech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'index' %}">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about_us' %}">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#episodes">Episódios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Entrar</a>
+                    </li>
+                </ul>
+                <span class="navbar-text"></span>
             </div>
-            <div class="banner-image">
-                <img src="{% static 'Assets/img/LOGO.svg' %}" alt="Microfone colorido">
-            </div>
-        </section>
-    </div>
+        </nav>
+    </header>
+    
 
-    <div class="episodes" id="episodes">
-        <div class="up-column"></div>
-        <div class="mid-column"></div>
-        <div class="dow-column"></div>
-        <section class="ver-mais">
-            <a href="{% url 'account_login' %}">
-                <p>Veja mais episódios</p>
-                <svg width="50" height="16" viewBox="0 0 81 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M80.6998 7.58672C81.0903 7.97724 81.0903 8.61041 80.6998 9.00093L74.3358 15.3649C73.9453 15.7554 73.3121 15.7554 72.9216 15.3649C72.5311 14.9744 72.5311 14.3412 72.9216 13.9507L78.5785 8.29382L72.9216 2.63697C72.5311 2.24644 72.5311 1.61328 72.9216 1.22276C73.3121 0.832231 73.9453 0.832231 74.3358 1.22276L80.6998 7.58672ZM-0.00732422 7.29382H79.9927V9.29382H-0.00732422L-0.00732422 7.29382Z" fill="white"/>
-                </svg>
-            </a>
-        </section>
-    </div>
-</main>
+    <main>
+        <div id="banner">
+            <section class="banner" id="sobre">
+                <div class="banner-content">
+                    <h1>Um Podcast sobre <span><br>Tecnologia da Informação</span></h1>
+                    <p>Texto contando como o QueridasTech surgiu e qual seu propósito, de uma maneira objetiva e curta.</p>
+                </div>
+                <div class="banner-image">
+                    <img src="{% static 'Assets/img/LOGO.svg' %}" alt="Microfone colorido">
+                </div>
+            </section>
+        </div>
+    
+        <div class="episodes" id="episodes">
+            <div class="up-column"></div>
+            <div class="mid-column"></div>
+            <div class="dow-column"></div>
+            <section class="ver-mais">
+                <a href="{% url 'account_login' %}">
+                    <p>Veja mais episódios</p>
+                    <svg width="50" height="16" viewBox="0 0 81 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M80.6998 7.58672C81.0903 7.97724 81.0903 8.61041 80.6998 9.00093L74.3358 15.3649C73.9453 15.7554 73.3121 15.7554 72.9216 15.3649C72.5311 14.9744 72.5311 14.3412 72.9216 13.9507L78.5785 8.29382L72.9216 2.63697C72.5311 2.24644 72.5311 1.61328 72.9216 1.22276C73.3121 0.832231 73.9453 0.832231 74.3358 1.22276L80.6998 7.58672ZM-0.00732422 7.29382H79.9927V9.29382H-0.00732422L-0.00732422 7.29382Z" fill="white"/>
+                    </svg>
+                </a>
+            </section>
+        </div>
+    </main>
+    
 
     <footer>
         <section class="body-footer">
