@@ -7,6 +7,7 @@ class EpisodeForm(forms.ModelForm):
     class Meta:
         model = Episode
         fields = ['title', 'description', 'audio_file', 'publication_date']
+<<<<<<< HEAD
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
@@ -44,3 +45,24 @@ class CustomSigninForm(LoginForm):
     
 class SearchForm(forms.Form):
     query = forms.CharField(max_length=100, label='Search')
+=======
+
+
+from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+
+class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+        return user
+>>>>>>> ad36b6214467c0d387e2d33aa9d24c693721e329

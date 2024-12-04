@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> ad36b6214467c0d387e2d33aa9d24c693721e329
 from rest_framework import serializers
 from .models import Episode, Playlist, JobPosting, EcosystemMap, Transcription, GlossaryTerm, Quiz
 
