@@ -70,7 +70,6 @@
                                     <input type="text" name="first_name" id="name" class="input-with-icon" placeholder="Nome" />
                                     <i class="bi bi-person" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
                                 </div>
-                                
                                 <div class="input-login" style="position: relative;">
                                     <input type="text" name="last_name" id="lastName" class="input-with-icon" placeholder="Sobrenome" />
                                     <i class="bi bi-person" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
@@ -80,14 +79,16 @@
                                 <input name="email" type="email" id="email" class="input-with-icon" placeholder="Digite seu e-mail">
                                 <i class="bi bi-envelope" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
                             </div>
-                        
+                            <div class="input-login" style="position: relative;">
+                                <input name="username" type="text" id="username" class="input-with-icon" placeholder="Nome de Usuário">
+                                <i class="bi bi-person-circle" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                            </div>
                             <div class="input-login position-relative">
                                 <input name="password1" id="password" type="password" class="input-with-icon" placeholder="Senha" class="form-control">
                                 <i class="bi bi-lock" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
                                 <span id="toggle-password" class="position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
                                     <!-- Olho com barra (ícone inicial) -->
                                     <i id="eye-slash" class="bi bi-eye-slash" style="display: inline;"></i>
-                                    
                                     <!-- Olho (ícone quando a senha for visível) -->
                                     <i id="eye" class="bi bi-eye" style="display: none;"></i>
                                 </span>
@@ -98,7 +99,6 @@
                                 <span id="toggle-password-confirm" class="position-absolute" style="right: 10px; bottom: 50%; transform: translateY(-50%); cursor: pointer;">
                                     <!-- Olho com barra (ícone inicial) -->
                                     <i id="eye-slash-confirm" class="bi bi-eye-slash" style="display: inline;"></i>
-                                    
                                     <!-- Olho (ícone quando a senha for visível) -->
                                     <i id="eye-confirm" class="bi bi-eye" style="display: none;"></i>
                                 </span>
@@ -112,7 +112,7 @@
                             <button type="submit">Entrar</button>
                         </div>
                     </div>
-                </form>
+                </form>                
             </div>
         </section>
     </div>

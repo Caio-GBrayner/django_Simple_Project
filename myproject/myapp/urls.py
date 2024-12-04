@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 from . import views
+from .views import CustomSignupView
 
 # Configurando o router para as rotas da API
 router = routers.DefaultRouter()
@@ -15,9 +16,9 @@ router.register(r'quizzes', views.QuizViewSet)
 web_urlpatterns = [
     path('search/', views.search, name='search'),
     path('', views.index, name='index'),  # Página inicial do aplicativo
-    path('sobre/', views.sobre, name='sobre'),  # Página sobre
+    path('sobre/', views.sobre, name='about_us'),  # Página sobre
     path('explore/', views.explore, name='explore'),  # Página explorar
-    path('cadastro/', views.CustomSignupView.as_view(), name='account_signup'), # Página de cadastro personalizada
+    path('cadastro/', CustomSignupView.as_view(), name='account_signup'),
     path('login/', views.CustomLoginView.as_view(), name='account_login'),  # Página de login personalizada
 ]
 

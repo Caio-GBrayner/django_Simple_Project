@@ -26,6 +26,7 @@ class CustomSignupView(SignupView):
     template_name = 'account/cadastro.html'
 
     def form_valid(self, form):
+        print("Formulário é válido. Dados:", form.cleaned_data)  # Adicione este log
         response = super().form_valid(form)
         # Adicione qualquer lógica adicional necessária aqui
         return redirect(reverse_lazy('account_login')) # Redirecionando para a página de login após o cadastro
@@ -70,7 +71,7 @@ class QuizViewSet(viewsets.ModelViewSet):
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer
     
-    from django.shortcuts import render
+from django.shortcuts import render
 from .forms import SearchForm
 
 def search(request):
@@ -82,4 +83,3 @@ def search(request):
             query = form.cleaned_data['query']
             results = Episode.objects.filter(title__icontains=query)
     return render(request, 'search_results.html', {'form': form, 'results': results})
-
