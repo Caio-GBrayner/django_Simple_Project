@@ -1,0 +1,163 @@
+body{
+    background-color: #4D1362;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+h1, h2, h3, p{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    max-width: 100vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+header i{
+    font-size:30px;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    margin: 20px 0 0 20px;
+}
+
+header a:hover{
+    color: #d9d9d9;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.logo img{
+    max-width: 50px;
+    width: 100%;
+}
+.logo h2{
+    font-size: clamp(1.5rem, 1vw, 1rem);
+    font-weight: 900;
+}
+
+.focal-name h3{
+    font-size: clamp(1.3rem, 1vw, 1rem);
+    font-weight: 500;
+    text-align: center;
+    margin-left: 10px;
+}
+
+main{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.team{
+    display: flex;
+    max-width: 100vw;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.profile{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    max-width: 400px;
+    width: 100%;
+    gap: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #16022F;
+    margin: 20px 20px;
+    max-height: 500px;
+    height: 100%;
+    padding: 10px;
+
+}
+
+.profile:hover{
+    transform: scale(1.1);
+    transition: 0.8s ease;
+}
+
+
+.profile img{
+    max-width: 160px;
+    width: 100%;
+    border-right: 0.3px solid white;
+    padding-right: 5px;
+}
+
+
+.integrant{
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: left;
+    gap: 15px;
+}
+
+.integrant h3{
+    font-size: clamp(1.3rem, 1vw, 1rem);
+    font-weight: 800;
+}
+
+.integrant p{
+    font-size: clamp(1rem, 1vw, 0.8rem);
+    font-weight: 500;
+}
+
+.personal-social{
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items: center;
+    gap: 10px;
+}
+
+.personal-social i{
+    font-size:clamp(1.8rem, 1vw, 1.5rem);
+}
+
+.personal-social a{
+    text-decoration:none;
+    color: white;
+}
+
+
+.personal-social a:hover{
+    color: #d9d9d9;
+    transition: 0.6s ease;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 912px){
+    .team{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

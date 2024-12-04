@@ -1,0 +1,797 @@
+body{
+    font-family: 'Montserrat';
+    background-color: #4D1362;
+
+}
+
+body h1,h2,h3, p{
+    margin: none;
+}
+
+
+
+header{
+    background-color: #4D1362  ;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.navbar-responsive{
+    display: none;
+}
+
+.form-control img{
+    max-width: 30px;
+    width: 30px;
+    position: absolute;
+    left: 10px;
+}
+
+.logo-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-nav a{
+    text-decoration: none;
+    color: white;
+}
+
+.logo-nav a:hover{
+    color: #d9d9d9;
+}
+
+.p-3 h3{
+    font-size: clamp (1.5rem, 1vw, 1rem);
+    font-weight: 600;
+}
+
+
+.nav-txt{
+    color: white;
+    font-weight: 600;
+    font-family: 'Montserrat';
+}
+
+.entrar{
+    background-color: white;
+    color: #4D1362;
+    width: 130px;
+    padding: 3px 15px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    border: none;
+}
+
+.talk-us{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.talk-us a{
+    background-color: #16022F;
+    color: white;
+    width: 180px;
+    padding: 6px 15px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    
+}
+
+.nav-principal a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-principal a:hover{
+    color: #d9d9d9;
+    transition: 0.6s ease;
+}
+
+.talk-us a:hover{
+    background-color: #d9d9d9;
+    color: #16022F;
+    transition: 0.3s ease;
+}
+
+.talk-us i{
+    font-size:clamp(1.5rem, 1vw, 1.5rem);
+}
+
+
+.talk-us i:hover{
+    color: #d9d9d9;
+}
+
+.cadastrar{
+    background-color: #16022F;
+    color: white;
+    width: 130px;
+    padding: 3px 15px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    border: none;
+}
+
+input.form-control.input-form{
+    background-color: none !important; 
+    border-radius: 0;
+    color: white;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.form-control::placeholder{
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.img-nav{
+    max-width: 25px;
+    width: 25px;
+    margin-left: -30px;
+}
+
+.btn-form img:hover {
+    filter: invert(50%) sepia(1) saturate(200%) hue-rotate(20deg);
+}
+
+
+.cadastrar:hover{
+    background-color: white;
+    color: #16022F;
+    transition: 0.3s ease;
+}
+
+.entrar:hover{
+    background-color: #16022F;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.nav-txt:hover{
+    color: #d9d9d9;
+}
+
+.text-end{
+    gap: 10px;
+}
+
+
+/*body*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    width: 100%;
+    gap: 5px;
+    color: white;
+    background-color:#4D1362;
+}
+
+
+/*first line*/
+
+
+.first-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-between;
+    max-width: 90vw;
+    width: 100%;
+    gap: 5px;
+}
+
+.body-library{
+    max-width: 400px;
+    width: 100%;
+    background-color: #16022F;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.body-library img{
+    max-width: 40px;
+    max-height: 40px;
+    height:100%;
+    width: 100%;
+    padding-right: 10px;
+    border-right:  0.8px white solid;
+    margin-right: 10px;
+}
+
+.body-library i{
+    max-width: 40px;
+    width: 100%;
+    max-height: 40px;
+    height: 100%;
+    font-size: clamp(1.6rem,1vw, 1.5rem);
+    padding-right: 10px;
+    border-right:  0.6px solid white;
+    margin-right: 10px;
+}
+
+
+/*modal*/
+
+.playlists-options{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.btn{
+    max-width: 380px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    background-color: #4D1362;
+    margin: 15px 0;
+}
+
+.btn h3, .btn i{
+    font-size: clamp(1.3rem, 1vw, 1rem);
+    font-weight: 800;
+    color: white;
+}
+
+.btn h3{
+    margin-left: 10px;
+}
+
+
+.btn:hover{
+    background-color: #d9d9d9;
+    transition: 0.6s ease;
+}
+
+.btn:hover {
+    background-color: #d9d9d9;
+    transition: 0.6s ease;
+}
+
+.btn:hover h3,
+.btn:hover i {
+    color: #16022F;
+    transition: 0.6s ease;
+}
+
+
+
+.btn-secondary{
+    max-width: 75px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*audio component*/
+.audio-component{
+    display: flex;
+    flex-direction:column; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    max-width: 100vw;
+    width: 100%;
+    max-height:100vh !important;
+    height: 100% !important;
+
+}
+
+
+.audio-elements{
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    gap: 5px;
+    max-width: 100vw;
+    width: 100%;
+    height: auto;
+
+}
+
+
+/*audio-box*/
+.audio-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    height: 440px;
+    background-color: #16022F;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+   
+}
+
+
+.audio-player{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #16022F;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
+}
+
+.audio-box img{
+    max-width: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.song-info{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid white;
+    font-family: 'Montserrat';
+    margin: 10px 0;
+
+}
+
+
+.song-title{
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    gap: 5px;
+}
+
+.song-title h3{
+    font-size: clamp(1.3rem, 1vw, 1rem);
+    font-weight: 800;
+    text-align: left;
+    margin-right: 10px;
+}
+
+
+.song-title i{
+    font-size: clamp(1.3rem, 1vw, 1rem);
+    margin-bottom: 2px;
+}
+
+
+.song-title i:hover{
+    color: #d9d9d9;
+    transform: scale(1.2);
+    transition: 0.6s ease;
+}
+
+.song-info p{
+    text-align: left;
+}
+
+.controls{
+    margin:20px 0;
+    display: flex;
+    gap: 10px;
+    max-width: 100vw;
+    width: 100%;
+    justify-content: center;
+}
+
+.controls button{
+    background-color: #16022F;
+    color: white;
+    border: none;
+}
+
+.controls i{
+    font-size: clamp(1.3rem, 1vw, 1rem);
+}
+
+.controls i:hover{
+    color: #d9d9d9;
+}
+
+#play-pause i{
+    font-size: clamp(2.2rem, 1.5vw, 1.5rem);
+    border: 3px solid white;
+    padding: 5px;
+    border-radius:100px
+}
+
+input[type="range"] {
+    -webkit-appearance: none; /* Remove o estilo padrão */
+    appearance: none;
+    width: 80%; /* Ajuste o tamanho conforme necessário */
+    height: 3px; /* Define a grossura */
+    background: white; /* Cor do fundo da barra */
+    border-radius: 5px; /* Para bordas arredondadas */
+    outline: none;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px; /* Largura do botão */
+    height: 15px; /* Altura do botão */
+    background: white; /* Cor do botão */
+    border-radius: 50%; /* Deixa o botão circular */
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+
+  .volume-container {
+    display: flex;
+    flex-direction: row-reverse; /* Organiza as linhas em coluna */
+    align-items: center; /* Centraliza os itens */
+    gap: 10px; /* Espaço entre as linhas */
+    margin: 10px 0;
+  }
+  
+  #volume-control {
+    width: 150px; /* Ajuste o tamanho do controle */
+    height: 5px; /* Espessura da barra */
+    background: white;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  #volume-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  #volume-control::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  #volume-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: clamp(1.3rem, 1vw, 1rem);
+    color: white;
+  }
+  
+
+  /*audio description*/
+
+  .drescriptions{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    gap: 8px;
+  }
+
+  .audio-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-evenly;
+    background-color: #16022F;
+    padding: 18px 10px;
+    gap: 20px;
+    border-radius: 10px;
+  }
+
+  .audio-description h3{
+    font-size: clamp(1.3rem, 1vw, 1rem);
+    font-weight: 800;
+    background-color: #4D1362;
+    color: white;
+    width: 150px;
+    padding: 5px 8px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  .audio-description p{
+    font-size: clamp(1rem, 1vw, 0.8rem);
+    font-weight: 500;
+    text-align: justify;
+    padding: 10px;
+    margin-left: 20px;
+  }
+
+
+  .audio-transcription{
+    background-color: #16022F;
+    border-radius: 10px;
+    padding: 20px 10px;
+    text-align: justify; 
+    
+  }
+
+
+  /*second line*/
+
+
+  .sencond-line{
+    display: flex;
+    flex-direction: column;
+    background-color: #16022F;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 90vw;
+    width: 100%;
+}
+
+.sencond-line h2{
+    font-size: clamp(1.5rem, 1vw, 1rem);
+    font-weight: 900;
+}
+
+
+  /*Last audios*/
+
+
+.mid-column{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: space-between;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o conteúdo com espaço entre eles */
+    align-items: stretch; /* Garante que os itens se ajustem à largura */
+    max-width: 500px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid #16022F;
+    gap: 0; /* Remove espaços adicionais entre os itens */
+    max-height: 480px;
+    height: 80%; /* Garante que o box tenha altura fixa */
+    overflow: hidden; /* Evita que elementos transbordem */
+}
+
+.box a{
+    text-decoration: none;
+}
+
+.visual-box{
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+    flex-grow: 1; 
+}
+
+.visual-box img{
+    max-width: 200px; 
+}
+
+.title-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top:10px;
+    gap: 20px;
+    color: #4D1362;
+    max-height: 320px;
+    height: 100%;
+}
+
+.title-box h3{
+    font-size: clamp(1.3rem, 1vw, 1rem);
+    font-weight: 800;
+}
+
+.title-box p{
+    text-align: left;
+    font-size: clamp(1rem, 1vw, 0.8rem);
+    font-weight: 500;
+    margin-right: 20px;
+    max-height: 200px;
+}
+
+.title-box u{
+    font-weight: 700;
+}
+
+.dow-column img, .mid-column img{
+    max-height: 270px;
+    height: 270px;
+}
+
+.box:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.6s all ease;
+}
+
+.mejs__container, .mejs__controls, .audio-player {
+    max-width: 600px;
+    width: 100%;
+    background-color: #16022F !important;
+    display: flex;
+    font-family: 'Montserrat';
+    justify-content: center;
+    align-items: center;
+    max-height: 80px !important;
+    height: 100%;
+    font-size: clamp(1rem, 1vw, 1rem) !important;
+}
+
+.translate-button{
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+    background-color: #16022F;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 80px;
+    font-size: clamp(1.3rem, 1vw, 1rem);
+}
+
+.translate-button:hover{
+    background-color: #d9d9d9;
+    color: #16022F;
+}
+
+@media screen  and (max-width: 912px) {
+    .navbar-responsive{
+        display: flex;
+        color: white;
+     } 
+
+     .nav-principal{
+        display: none;
+     }
+   
+     .navbar-responsive .navbar-brand{
+        color: white;
+        font-weight: 800;
+        margin-left: 10px;
+        padding: 20px;
+
+    }
+
+    
+    .navbar-toggler {
+        background-color: white; /* Altera o fundo do botão */
+        border: none;
+    }
+
+
+    .navbar-responsive a{ 
+        color: white;
+        font-family: 'Montserrat';
+        margin-left: 10px;
+        font-weight: 600;
+    }
+
+
+    .navbar-responsive a:hover{
+        background-color: black;
+        color: white;
+    }
+   
+     
+   body{
+    display: flex ;
+    flex-direction: column;
+   }
+   
+   main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    width: 100%;
+   }
+
+   .first-line{
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    width: 100%;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos */
+
+    
+   }
+
+ 
+
+   .body-library, .audio-box, .audio-description, .audio-transcription{
+    display: flex;
+    flex-direction: column; 
+
+    max-width: 100vw;
+    border-radius: 0;
+    width: 100%;
+    align-items: center;
+   }
+
+
+   .audio-elements{
+    display: flex;
+    flex-direction: column;
+   }
+
+   .sencond-line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 80vw;
+    width: 100%;
+   }
+
+   .sencond-line h2{
+    margin-bottom: 20px;
+   }
+
+   .mid-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .playlists-options{
+    max-width: 80vw;
+    width: 100%;
+   }
+
+   .btn{
+    max-width: 600px !important;
+    width: 100%;
+   }
+
+  .playlists-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .box-container{
+    max-width: 280px;
+    width: 100%;
+
+ }
+
+ .mejs__container, .mejs__controls, .audio-player {
+    max-width: 280px;
+    width: 100%;
+ }
+
+ .title-box h3{
+    font-size: clamp(1rem, 1vw, 1rem);
+ }
+
+
+}
+
+
